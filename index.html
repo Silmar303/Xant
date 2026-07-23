@@ -16,72 +16,94 @@
             background: #0a0a0f;
             color: white;
             font-family: 'Xolonium', sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        /* Titre */
-        header {
-            text-align: center;
-            padding: 20px 10px;
-        }
-
-        header h1 {
-            font-family: 'Eunomia', sans-serif;
-            font-size: 150px;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-
-        /* Layout 3 colonnes */
+        /* Layout 3 colonnes pleine hauteur */
         .layout {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
-            gap: 20px;
-            flex: 1;
-            padding: 20px;
-            align-items: center;
+            height: 100vh;
         }
 
+        /* Colonnes latérales */
         .column {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .column img {
-            max-width: 100%;
-            max-height: 80vh;
-            object-fit: contain;
-            opacity: 0.8;
+        .column.left {
+            border-right: 4px solid #9F81BA;
         }
 
-        /* Zone centrale avec les boutons */
+        .column.right {
+            border-left: 4px solid #9F81BA;
+        }
+
+        .column img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Colonne centrale avec illustration en fond */
         .center-box {
+            position: relative;
+            height: 100%;
+            padding: 40px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            backdrop-filter: blur(6px);
+            align-items: center;
+            gap: 30px;
+
+            /* Illustration centrale en fond */
+            background-image: url('Images/illustration_centre.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Contenu au-dessus du fond */
+        .center-box * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Titre */
+        .center-box h1 {
+            font-family: 'Eunomia', sans-serif;
+            font-size: 150px;
+            margin: 0;
+            text-align: center;
+			text-shadow:
+				-3px -3px 0 #000,
+				3px -3px 0 #000,
+				-3px  3px 0 #000,
+				3px  3px 0 #000;
+        }
+
+        /* Boutons */
+        .btn {
+            padding: 35px 20px;
+            background: #25204C;
+            border: 2px solid #9F81BA;
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            border-radius: 10px;
+            transition: 0.25s;
+            width: 260px;
             text-align: center;
         }
 
-        .btn {
-            padding: 15px 20px;
-            background: #1e1e2f;
-            border: 2px solid #6a4cff;
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
-            border-radius: 10px;
-            transition: 0.25s;
-        }
-
         .btn:hover {
-            background: #6a4cff;
+            background: #9F81BA;
             color: black;
         }
 
@@ -90,8 +112,12 @@
             .layout {
                 grid-template-columns: 1fr;
             }
-            .column {
+            .column.left,
+            .column.right {
                 display: none;
+            }
+            body {
+                overflow-y: auto;
             }
         }
     </style>
@@ -99,25 +125,23 @@
 
 <body>
 
-    <header>
-        <h1>Xant-Ω</h1>
-    </header>
-
     <div class="layout">
 
         <!-- Colonne gauche -->
-        <div class="column">
-            <img src="Images/Illustration_gauche.png">
+        <div class="column left">
+            <img src="Images/illustration_gauche.png" alt="Illustration gauche">
         </div>
 
         <!-- Colonne centrale -->
         <div class="center-box">
 
-            <a class="btn" href="TON_LIEN_DRIVE_LIVRET" target="_blank">
+            <h1>Xant-Ω</h1>
+
+            <a class="btn" href="https://drive.google.com/file/d/1ilBt6LYfUR6WrXWyt7UL70WqW7MeRSiv/view?usp=sharing" target="_blank">
                 Livret de règles
             </a>
 
-            <a class="btn" href="TON_LIEN_DRIVE_SCENARIOS" target="_blank">
+            <a class="btn" href="https://drive.google.com/file/d/1x0374FFBMjbLEzuOQiSXSrITtPsIV8Op/view?usp=sharing" target="_blank">
                 Scénarios et variantes
             </a>
 
@@ -132,8 +156,8 @@
         </div>
 
         <!-- Colonne droite -->
-        <div class="column">
-            <img src="Images/Illustration_droite.png">
+        <div class="column right">
+            <img src="Images/illustration_droite.png" alt="Illustration droite">
         </div>
 
     </div>
