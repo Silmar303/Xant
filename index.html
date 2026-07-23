@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xant-Ω</title>
+
+    <!-- Polices Eunomia & Xolonium -->
+    <link href="https://fonts.cdnfonts.com/css/eunomia" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/xolonium" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0f;
+            color: white;
+            font-family: 'Xolonium', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Titre */
+        header {
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        header h1 {
+            font-family: 'Eunomia', sans-serif;
+            font-size: 150px;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        /* Layout 3 colonnes */
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            flex: 1;
+            padding: 20px;
+            align-items: center;
+        }
+
+        .column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .column img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            opacity: 0.8;
+        }
+
+        /* Zone centrale avec les boutons */
+        .center-box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            backdrop-filter: blur(6px);
+            text-align: center;
+        }
+
+        .btn {
+            padding: 15px 20px;
+            background: #1e1e2f;
+            border: 2px solid #6a4cff;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 10px;
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            background: #6a4cff;
+            color: black;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+            .column {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Xant-Ω</h1>
+    </header>
+
+    <div class="layout">
+
+        <!-- Colonne gauche -->
+        <div class="column">
+            <img src="Images/Illustration_gauche.png">
+        </div>
+
+        <!-- Colonne centrale -->
+        <div class="center-box">
+
+            <a class="btn" href="TON_LIEN_DRIVE_LIVRET" target="_blank">
+                Livret de règles
+            </a>
+
+            <a class="btn" href="TON_LIEN_DRIVE_SCENARIOS" target="_blank">
+                Scénarios et variantes
+            </a>
+
+            <a class="btn" href="Aides_de_jeu.html">
+                Aides de jeu
+            </a>
+
+            <a class="btn" href="Remerciements.html">
+                Remerciements
+            </a>
+
+        </div>
+
+        <!-- Colonne droite -->
+        <div class="column">
+            <img src="Images/Illustration_droite.png">
+        </div>
+
+    </div>
+
+</body>
+</html>
