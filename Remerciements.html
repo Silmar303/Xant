@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remerciements — Xant-Ω</title>
+
+    <link href="https://fonts.cdnfonts.com/css/eunomia" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/xolonium" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at center, #0a0a0f 0%, #050508 100%);
+            color: #e8e8ff;
+            font-family: 'Xolonium', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Layout 3 colonnes */
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            height: 100vh;
+        }
+
+        /* Colonnes latérales */
+        .column {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .column img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.35;
+        }
+
+        /* Encadré central premium */
+        .center-box {
+            position: relative;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            text-align: center;
+
+            /* Effet plaque gravée */
+            background: rgba(20, 15, 40, 0.55);
+            border: 3px solid rgba(150, 120, 200, 0.7);
+            border-radius: 20px;
+            box-shadow:
+                0 0 25px rgba(120, 80, 200, 0.4),
+                inset 0 0 20px rgba(0, 255, 200, 0.15);
+            backdrop-filter: blur(6px);
+
+            width: 70%;
+            margin: auto;
+        }
+
+        .center-box h1 {
+            font-family: 'Eunomia', sans-serif;
+            font-size: 70px;
+            margin: 0;
+            color: #caa8ff;
+            text-shadow:
+                0 0 10px #8a4fff,
+                0 0 25px #4fffd7;
+        }
+
+        .center-box p {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 900px;
+            color: #dcdcff;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+            .column {
+                display: none;
+            }
+            body {
+                overflow-y: auto;
+            }
+            .center-box {
+                width: 90%;
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- Colonne gauche -->
+        <div class="column">
+            <img src="Images/Remerciements_gauche.png" alt="Illustration gauche">
+        </div>
+
+        <!-- Encadré central -->
+        <div class="center-box">
+
+            <h1>Merci !</h1>
+
+            <p>
+                Xant‑Ω est un projet qui m'a semblé ne jamais pouvoir aboutir. 
+				Le nombre d'épreuves techniques à surmonter a entretenu "ma bulle", pendant plus de 10 ans.
+				Au début, la résilience et la persévérance dont j'allais devoir faire preuve m'étaient alors inconnus.
+				Mais entre la vie professionnelle, une vie sociale de plus en plus rare et des périodes de doutes de plus en plus fréquentes, "ma bulle" m'a bien aidé.
+				Ce qui restait difficile cependant, était de devoir imposer ça à mes proches et voir de déliter mon tissu social.
+				C'est pourquoi je voudrais remercier ceux qui m'ont aider à surmonter... BLABLABLA Le mélodrame n'intéresse personne.
+				
+            </p>
+			
+			<p>
+				
+            </p>
+			
+            <p>
+                À tous les <strong>testeurs</strong> qui ont bravé les premières versions instables, qui ont affronté les mécaniques bancales, qui ont débattu avec ma tête de mule, qui ont proposé et débugué : merci.  
+                Votre énergie a façonné ce monde.
+            </p>
+                La lutte de Xant contre les corporatiste va pouvoir exister. Vos histoires dans ce monde seront dès lors des fragments de cet univers qui m'a demandé tant de passion.
+
+            <p>
+                Merci pour votre patience, votre passion, vos retours, vos critiques précieuses et pour chaque instant passé avec moi sur Xant‑Ω.
+            </p>
+
+
+
+        </div>
+
+        <!-- Colonne droite -->
+        <div class="column">
+            <img src="Images/Remerciements_droite.png" alt="Illustration droite">
+        </div>
+
+    </div>
+
+</body>
+</html>
